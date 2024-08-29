@@ -11,7 +11,9 @@ public class bit {
         ~ negacja bitowa
          */
         int a = 6, b = 5;
-        System.out.println(a << 2);
-        System.out.println(a | b);// 011 | 100 = 111
+        System.out.println(a << 2);// 000110 << 2 = 011000
+        System.out.println(a | b);// 101 | 110 = 111
+        System.out.println(a & b);// 101 & 110 = 100
+        System.out.println(a ^ b);// 1 1 -0     1 0 - 1     0 1- 1      0 0 - 0
     }
 }
