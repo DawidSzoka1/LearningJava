@@ -1,4 +1,6 @@
-public class variables {
+package Variables;
+
+public class type_of_variables {
     public static void main(String[] args) {
         int a = 5;
         int b = 4;
@@ -8,6 +10,8 @@ public class variables {
         byte by = 34;
         int c = a + b;
         String s = "asdsfd";
+        final double stala_zmienna = 4;
+        // can't change value of that
 
         if (a > b & a > 2 || a < b) {
             System.out.println(a);
