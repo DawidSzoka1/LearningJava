@@ -1,6 +1,7 @@
 package objectPrograming;
 import java.util.Scanner;
 
+
 public class scanners {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
