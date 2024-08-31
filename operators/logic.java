@@ -13,5 +13,7 @@ public class logic {
         }else{
             System.out.println("nic");
         }
+        ImportTesting test = new ImportTesting();
+        System.out.println(test.y);
     }
 }

@@ -1,6 +1,6 @@
 package objectPrograming;
 import java.util.Scanner;
-
+import operators.ImportTesting;
 
 public class scanners {
     public static void main(String[] args){
@@ -12,6 +12,8 @@ public class scanners {
         System.out.println("you entered: " + name);
         float f = input.nextFloat();
         System.out.println("you entered: " + f);
+        ImportTesting test = new ImportTesting();
+        System.out.println("You entered: " + test.y);
 
     }
 }
