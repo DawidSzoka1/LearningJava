@@ -1,6 +1,5 @@
 package objectPrograming;
 
-
 import java.util.Arrays;
 
 public class base {
@@ -14,10 +13,12 @@ public class base {
         abc.on();
         Monitor abc3 = new Monitor(123, 31);
         Monitor[] monitors = new Monitor[4];
-        for(Monitor m: monitors){
-            m = new Monitor(2, 3);
-            System.out.println(m.height);
+        for(int i = 0; i < monitors.length; i++){
+            monitors[i] = new Monitor(2, 3);
         }
+        System.out.println(Arrays.toString(monitors));
+        BankAccount account = new BankAccount();
+        System.out.println(account.getAmount());
     }
 }
 
