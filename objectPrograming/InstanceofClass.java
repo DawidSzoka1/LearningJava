@@ -9,7 +9,7 @@ public class InstanceofClass {
         persons[0].displayEmployee();
         for(Person person: persons) {
             if(person instanceof Teacher) {
-                person.displayEmployee();
+                ((Teacher)person).getDuty();
             }else if(person != null) {
                 person.display();
             }
@@ -71,5 +71,9 @@ class Teacher extends Employee {
     @Override
     void displayEmployee() {
         System.out.println(duty + " is a teacher employee");
+    }
+    String getDuty() {
+        System.out.println("duty returned");
+        return duty;
     }
 }
