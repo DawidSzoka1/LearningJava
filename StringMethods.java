@@ -4,6 +4,7 @@ public class StringMethods {
         System.out.println(name.equalsIgnoreCase("Name"));
         System.out.println(name.length());
         System.out.println(name.charAt(0));
+
         for(char c: name.toCharArray()){
             System.out.println(c);
         }
