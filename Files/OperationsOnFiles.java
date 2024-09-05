@@ -53,7 +53,7 @@ public class OperationsOnFiles {
         }
         for(String filename: file.list()){
             File t = new File(file.getPath(), filename);
-            System.out.println(filename);
+            System.out.println(t.getAbsolutePath());
             if(t.isDirectory()){
                 writeListDir(t);
             }
