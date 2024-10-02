@@ -6,7 +6,7 @@ public class Exercise02 {
     static boolean pal(String text){
         int i = 0;
         int j = text.length()-1;
-        while(i != j){
+        while(i < j){
             if(text.charAt(i) != text.charAt(j)){
                 return false;
             }
@@ -19,7 +19,7 @@ public class Exercise02 {
         char[] words = text.toCharArray();
         int i = 0;
         int j = words.length-1;
-        while(i != j){
+        while(i < j){
             if(words[i] != words[j]){
                 return false;
             }
