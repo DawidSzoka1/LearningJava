@@ -16,7 +16,7 @@ public class Exercise04 {
             }
 
         }
-        int otherInd = 0;
+        int otherInd = min;
         for(int i = 0; i < s.length(); i++){
             if(i != s.indexOf(Integer.toString(max)) && i != s.indexOf(Integer.toString(min))){
                 otherInd = i;
