@@ -44,6 +44,7 @@ public class Exercise1 {
         System.out.println(Arrays.toString(test));
         Exercise1 ex = new Exercise1();
         ex.hell();
-
+        Point p = new Point(2, 3);
+        p.wypisz();
     }
 }
