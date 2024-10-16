@@ -24,7 +24,16 @@ public class School {
         System.out.println("Student added to the list");
         amount++;
     }
-
+    public void deleteStudent(Student s) {
+        for(int i = 0; i < amount; i++) {
+            if(students[i].equals(s)) {
+                students[i] = null;
+                amount--;
+                break;
+            }
+        }
+        System.out.println("Student deleted from the list");
+    }
 }
 
 
@@ -34,6 +43,8 @@ class test{
         Student student = new Student("d", "s", "3");
 
         s.addStudent(student);
+        s.getStudents("S");
+        s.deleteStudent(student);
         s.getStudents("S");
     }
 }

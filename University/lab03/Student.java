@@ -1,6 +1,8 @@
 package University.lab03;
 
 
+import java.util.Objects;
+
 public class Student {
     private String first_name;
     private String last_name;
@@ -116,5 +118,18 @@ public class Student {
                 ", last_name='" + last_name + '\'' +
                 ", pesel_number='" + pesel_number + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(first_name, student.first_name) && Objects.equals(last_name, student.last_name) && Objects.equals(pesel_number, student.pesel_number);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first_name, last_name, pesel_number);
     }
 }
