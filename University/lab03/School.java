@@ -20,6 +20,12 @@ public class School {
         }
     }
     public void addStudent(Student s) {
+        for(int i = 0; i < amount; i++) {
+            if(students[i].getPesel_number() == s.getPesel_number()) {
+                System.out.println("Student with that pesel already exists");
+                return;
+            }
+        }
         students[amount] = s;
         System.out.println("Student added to the list");
         amount++;

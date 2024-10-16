@@ -12,10 +12,6 @@ public class Student {
         FEMALE, MALE
     }
 
-    public enum months {
-        JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE,
-        JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
-    }
 
     public Student() {
     }
@@ -59,6 +55,10 @@ public class Student {
     }
 
     public void printBirthday() {
+        enum months {
+            JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE,
+            JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
+        }
         int t = Integer.parseInt(String.valueOf(pesel_number.charAt(3))) - 1;
         months m = months.values()[t];
         String day = pesel_number.charAt(4) + "" + pesel_number.charAt(5);
