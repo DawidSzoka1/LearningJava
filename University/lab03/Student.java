@@ -1,6 +1,5 @@
 package University.lab03;
 
-import java.util.Arrays;
 
 public class Student {
     private String first_name;
@@ -82,5 +81,40 @@ public class Student {
             return check == 0;
         }
         return 10 - (sum % 10) == check;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getPesel_number() {
+        return pesel_number;
+    }
+
+    public void setPesel_number(String pesel_number) {
+        this.pesel_number = pesel_number;
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", pesel_number='" + pesel_number + '\'' +
+                '}';
     }
 }
