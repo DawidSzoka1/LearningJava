@@ -32,24 +32,24 @@ public class Student {
         int check = Integer.parseInt(String.valueOf(pesel_number.charAt(2)));
         switch (check) {
             case 0:
-                year = "19" + pesel_number.charAt(0) + pesel_number.charAt(1);
+                year = "19" + pesel_number.substring(0,2);
                 break;
             case 2:
-                year = "20" + pesel_number.charAt(0) + pesel_number.charAt(1);
+                year = "20" + pesel_number.substring(0,2);
                 ;
                 break;
             case 8:
-                year = "18" + pesel_number.charAt(0) + pesel_number.charAt(1);
+                year = "18" + pesel_number.substring(0,2);
                 ;
                 break;
             case 4:
-                year =  "21" + pesel_number.charAt(0) + pesel_number.charAt(1);
+                year =  "21" + pesel_number.substring(0,2);
                 break;
             case 6:
-                year =  "22" + pesel_number.charAt(0) + pesel_number.charAt(1);
+                year =  "22" + pesel_number.substring(0,2);
                 break;
             default:
-                year = pesel_number.charAt(0) + "" + pesel_number.charAt(1);
+                year = pesel_number.substring(0,2);
         }
         return year;
     }
