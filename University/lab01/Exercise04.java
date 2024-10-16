@@ -1,5 +1,6 @@
 package University.lab01;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercise04 {
@@ -28,7 +29,27 @@ public class Exercise04 {
         return new int[]{maxNum,minNum};
     }
 
+    static int MinNum(int n){
+        String toString = Integer.toString(n);
+        char[] chars = toString.toCharArray();
+        Arrays.sort(chars);
+        toString = new String(chars);
+        return Integer.parseInt(toString);
+    }
+
+    static int MaxNum(int n){
+        String toString = Integer.toString(n);
+        char[] chars = toString.toCharArray();
+        Arrays.sort(chars);
+        StringBuilder reverse = new StringBuilder(new String(chars));
+        reverse.reverse();
+        return Integer.parseInt(reverse.toString());
+    }
+
     public static void main(String[] args) {
+
+        System.out.println(MaxNum(142));
+
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number between 111-999: ");
         int number = input.nextInt();
@@ -42,9 +63,9 @@ public class Exercise04 {
         int result = maxMin[0] - maxMin[1];
         while(result > 0){
             maxMin = maxMinInInt(result);
-            System.out.println(maxMin[0] + " " + maxMin[1]);
+            System.out.println(maxMin[0] + " " + maxMin[1] + " " + result);
             result = maxMin[0] - maxMin[1];
         }
-
+        
     }
 }
