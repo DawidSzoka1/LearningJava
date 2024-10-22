@@ -1,6 +1,6 @@
 package UdemyYT.Variables.objectPrograming;
 
-import org.jetbrains.annotations.NotNull;
+
 
 import java.util.Arrays;
 
@@ -46,7 +46,7 @@ class NameImplements implements Name, Surname, Comparable { // In java you can i
     }
 
     @Override
-    public int compareTo(@NotNull Object o) {
+    public int compareTo(Object o) {
         if(this.x > ((NameImplements)o).x){
             return 1;
         }else if(this.x < ((NameImplements)o).x){
