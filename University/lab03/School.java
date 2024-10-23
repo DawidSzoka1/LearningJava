@@ -1,6 +1,7 @@
 package University.lab03;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class School {
@@ -62,14 +63,21 @@ public class School {
         }
         return sum / amount;
     }
-    public List<Student> getByMonth(int month){
-        List<Student> list = new ArrayList<Student>();
+    public void getByMonth(int month){
         for(int i = 0; i < amount; i++) {
             if(Integer.parseInt(String.valueOf(students[i].printBirthday().getMonth())) == month) {
-                list.add(students[i]);
+                System.out.println(students[i]);
             }
         }
-        return list;
+    }
+
+    @Override
+    public String toString() {
+        String w = "";
+        for(int i = 0; i < amount; i++) {
+            w += students[i].toString() + "\n";
+        }
+        return w;
     }
 }
 
@@ -78,6 +86,8 @@ class test{
     public static void main(String[] args) {
         School s = new School();
         Student student = new Student("d", "s", "3");
-
+        s.addStudent(student);
+        s.addStudent(new Student("a", "sd", "432"));
+        System.out.println(s);
     }
 }
