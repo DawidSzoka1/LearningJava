@@ -1,6 +1,7 @@
 package University.lab03;
 
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Student {
@@ -27,43 +28,45 @@ public class Student {
         System.out.println(g);
     }
 
-    private String getYear(){
-        String year;
-        int check = Integer.parseInt(String.valueOf(pesel_number.charAt(2)));
-        switch (check) {
-            case 0:
-                year = "19" + pesel_number.substring(0,2);
-                break;
-            case 2:
-                year = "20" + pesel_number.substring(0,2);
-                ;
-                break;
-            case 8:
-                year = "18" + pesel_number.substring(0,2);
-                ;
-                break;
-            case 4:
-                year =  "21" + pesel_number.substring(0,2);
-                break;
-            case 6:
-                year =  "22" + pesel_number.substring(0,2);
-                break;
-            default:
-                year = pesel_number.substring(0,2);
-        }
-        return year;
-    }
 
-    public void printBirthday() {
+    public LocalDate printBirthday() {
         enum months {
             JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE,
             JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
         }
-        int t = Integer.parseInt(String.valueOf(pesel_number.charAt(3))) - 1;
-        months m = months.values()[t];
-        String day = pesel_number.charAt(4) + "" + pesel_number.charAt(5);
-        System.out.println(day + " " + m + " " + getYear());
+        int year = Integer.parseInt(pesel_number.substring(0, 2));
+        int month = Integer.parseInt(pesel_number.substring(2, 4));
+        int day = Integer.parseInt(pesel_number.substring(4, 6));
+
+
+        if (month >= 1 && month <= 12) {
+            year += 1900;
+        } else if (month >= 21 && month <= 32) {
+
+            month -= 20;
+            year += 2000;
+        } else if (month >= 81 && month <= 92) {
+
+            month -= 80;
+            year += 1800;
+        } else if (month >= 41 && month <= 52) {
+
+            month -= 40;
+            year += 2100;
+        } else if (month >= 61 && month <= 72) {
+
+            month -= 60;
+            year += 2200;
+        } else {
+            throw new IllegalArgumentException("Nieprawidłowy miesiąc w numerze PESEL");
+        }
+
+        return LocalDate.of(year, month, day);
     }
+    public int howOld(){
+        return LocalDate.now().getYear() - printBirthday().getYear();
+    }
+
 
     public boolean isValid(){
         int sum = 0;
@@ -131,5 +134,9 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(first_name, last_name, pesel_number);
+    }
+
+    public boolean spr(Student s){
+        return this.printBirthday().getMonth() == s.printBirthday().getMonth();
     }
 }

@@ -1,5 +1,8 @@
 package University.lab03;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class School {
     private Student[] students;
     private int amount = 0;
@@ -33,12 +36,40 @@ public class School {
     public void deleteStudent(Student s) {
         for(int i = 0; i < amount; i++) {
             if(students[i].equals(s)) {
-                students[i] = null;
+                students[i] = students[amount - 1];
+                students[amount - 1] = null;
                 amount--;
                 break;
             }
         }
         System.out.println("Student deleted from the list");
+    }
+    public Student oldest(){
+        int max = 0;
+        Student s = null;
+        for(int i = 0; i < amount; i++) {
+            if(students[i].howOld() > max){
+                max = students[i].howOld();
+                s = students[i];
+            }
+        }
+        return s;
+    }
+    public float averageOld() {
+        float sum = 0;
+        for(int i = 0; i < amount; i++) {
+            sum += students[i].howOld();
+        }
+        return sum / amount;
+    }
+    public List<Student> getByMonth(int month){
+        List<Student> list = new ArrayList<Student>();
+        for(int i = 0; i < amount; i++) {
+            if(Integer.parseInt(String.valueOf(students[i].printBirthday().getMonth())) == month) {
+                list.add(students[i]);
+            }
+        }
+        return list;
     }
 }
 
@@ -48,9 +79,5 @@ class test{
         School s = new School();
         Student student = new Student("d", "s", "3");
 
-        s.addStudent(student);
-        s.getStudents("S");
-        s.deleteStudent(student);
-        s.getStudents("S");
     }
 }
