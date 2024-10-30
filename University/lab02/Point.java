@@ -40,20 +40,21 @@ public class Point {
     }
 
     public int getPosiotion() {
-        if (x >= 0) {
-            if (y >= 0) {
+        if (x > 0) {
+            if (y > 0) {
                 return 1;
-            } else {
+            } else if(y < 0){
                 return 4;
             }
         }
-        else {
-            if (y >= 0) {
+        else if( x < 0) {
+            if (y > 0) {
                 return 2;
-            } else {
+            } else if(y < 0){
                 return 3;
             }
         }
+        return 0;
     }
     public double length(){
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
