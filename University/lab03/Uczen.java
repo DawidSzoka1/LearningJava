@@ -126,9 +126,9 @@ public class Uczen {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Uczen)) return false;
         Uczen uczen = (Uczen) o;
-        return Objects.equals(first_name, uczen.first_name) && Objects.equals(last_name, uczen.last_name) && Objects.equals(pesel_number, uczen.pesel_number);
+        return Objects.equals(pesel_number, uczen.pesel_number);
     }
 
     @Override
@@ -139,4 +139,5 @@ public class Uczen {
     public boolean spr(Uczen s){
         return this.printBirthday().getMonth() == s.printBirthday().getMonth();
     }
+
 }

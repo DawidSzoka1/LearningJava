@@ -14,6 +14,15 @@ public class Worker extends Uczen {
         this.pensja = pensja;
     }
 
+    public double getPensja() {
+        return pensja;
+    }
+
+    public void setPensja(double pensja) {
+        this.pensja = pensja;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == null) {
             return false;
