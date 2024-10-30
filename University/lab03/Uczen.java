@@ -4,7 +4,7 @@ package University.lab03;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Student {
+public class Uczen {
     private String first_name;
     private String last_name;
     private String pesel_number;
@@ -14,10 +14,10 @@ public class Student {
     }
 
 
-    public Student() {
+    public Uczen() {
     }
 
-    public Student(String first_name, String last_name, String pesel_number) {
+    public Uczen(String first_name, String last_name, String pesel_number) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.pesel_number = pesel_number;
@@ -127,8 +127,8 @@ public class Student {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equals(first_name, student.first_name) && Objects.equals(last_name, student.last_name) && Objects.equals(pesel_number, student.pesel_number);
+        Uczen uczen = (Uczen) o;
+        return Objects.equals(first_name, uczen.first_name) && Objects.equals(last_name, uczen.last_name) && Objects.equals(pesel_number, uczen.pesel_number);
     }
 
     @Override
@@ -136,7 +136,7 @@ public class Student {
         return Objects.hash(first_name, last_name, pesel_number);
     }
 
-    public boolean spr(Student s){
+    public boolean spr(Uczen s){
         return this.printBirthday().getMonth() == s.printBirthday().getMonth();
     }
 }
