@@ -6,10 +6,10 @@ public abstract class Building {
     private String localization;
     private int floorAmount;
 
-    public Building() {
+    Building() {
     }
 
-    public Building(String type, int counstructYear, String localization, int floorAmount) {
+    Building(String type, int counstructYear, String localization, int floorAmount) {
         this.type = type;
         this.counstructYear = counstructYear;
         this.localization = localization;
