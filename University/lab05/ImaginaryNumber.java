@@ -29,7 +29,17 @@ public class ImaginaryNumber {
     }
 
     public ImaginaryNumber add(ImaginaryNumber other) {
-        return new ImaginaryNumber(re + other.re, im + other.im);
+        return new ImaginaryNumber(re + other.getRe(), im + other.getIm());
+    }
+
+    public ImaginaryNumber multiplyByScalar(double s){
+        return new ImaginaryNumber(re * s, im * s);
+    }
+
+    public ImaginaryNumber multiplyByIma(ImaginaryNumber o){
+        double reM = re * o.getRe() - im * o.getIm();
+        double imM = re * o.getIm() + im * o.getRe();
+        return new ImaginaryNumber(reM, imM);
     }
 
 
