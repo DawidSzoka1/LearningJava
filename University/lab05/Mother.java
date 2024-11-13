@@ -36,6 +36,15 @@ public class Mother {
         }
         return added;
     }
+    public Mother subtract(Mother other){
+        Mother m = new Mother(mother.length, mother[0].length);
+        for(int i = 0; i < mother.length; i++){
+            for(int j = 0; j < mother[i].length; j++){
+                m.mother[i][j] = mother[i][j].substract(other.mother[i][j]);
+            }
+        }
+        return m;
+    }
 
     public void multiplayByScalar(double s){
         for(int i = 0; i < mother.length; i++){

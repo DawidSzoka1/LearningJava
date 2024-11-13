@@ -42,6 +42,9 @@ public class ImaginaryNumber {
         return new ImaginaryNumber(reM, imM);
     }
 
+    public ImaginaryNumber substract(ImaginaryNumber o){
+        return new ImaginaryNumber(re - o.getRe(), im - o.getIm());
+    }
 
     @Override
     public String toString() {
