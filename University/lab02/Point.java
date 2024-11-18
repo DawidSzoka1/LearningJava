@@ -3,7 +3,7 @@ package University.lab02;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Point {
+public class Point  implements Comparable<Point>{
     private int x, y;
 
     public Point() {
@@ -62,26 +62,40 @@ public class Point {
     public boolean spr(Point p){
         return this.getPosiotion() == p.getPosiotion();
     }
+    public Point add(Point p){
+        return new Point(this.x + p.getX(), this.y + p.getY());
+    }
 
     public static void main(String[] args) {
-        Point p1 = new Point(1, 2);
-        p1.wypisz();
-        System.out.println(p1);
-        Point[] points = new Point[10];
-        Random rand = new Random();
-        for (int i = 0; i < points.length; i++) {
-            points[i] = new Point(rand.nextInt(2), rand.nextInt(2));
-//            System.out.println(points[i]);
-        }
-//        System.out.println(Arrays.toString(points));
+//        Point p1 = new Point(1, 2);
+//        p1.wypisz();
+//        System.out.println(p1);
+//        Point[] points = new Point[10];
+//        Random rand = new Random();
+//        for (int i = 0; i < points.length; i++) {
+//            points[i] = new Point(rand.nextInt(2), rand.nextInt(2));
+////            System.out.println(points[i]);
+//        }
+////        System.out.println(Arrays.toString(points));
+//
+//        Odcinek[] o = new Odcinek[10];
+//        for (int i = 0; i < o.length; i++) {
+//            o[i] = new Odcinek(points[i], points[rand.nextInt(points.length)]);
+//        }
+//        Odcinek[] max = Odcinek.maxLenght(o);
+//        System.out.println(Arrays.toString(max));
 
-        Odcinek[] o = new Odcinek[10];
-        for (int i = 0; i < o.length; i++) {
-            o[i] = new Odcinek(points[i], points[rand.nextInt(points.length)]);
-        }
-        Odcinek[] max = Odcinek.maxLenght(o);
-        System.out.println(Arrays.toString(max));
+    }
 
+    @Override
+    public int compareTo(Point o) {
+        if(this.x > o.getX()){
+            return 1;
+        }
+        else if(this.x < o.getX()){
+            return -1;
+        }
+        return 0;
     }
 }
 
