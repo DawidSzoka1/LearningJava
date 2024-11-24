@@ -1,14 +1,11 @@
 package University.kol01;
 
-class A {
-    private String name;
-
-    public A() {
+class A{
+    String name;
+    A(String name){
+        this.name=name;
     }
-
-    public A(String name) {
-        this.name = name;
-    }
+    A(){}
 
     @Override
     public String toString() {
@@ -16,51 +13,41 @@ class A {
     }
 }
 
-class B extends A {
-    private int num;
-
-    public B() {
-        super();
-    }
-
-    public B(String name, int num) {
+class B extends A{
+    int number;
+    B(String name, int number){
         super(name);
-        this.num = num;
+        this.number=number;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ": " + num;
+        return super.toString()+ ": " +number;
     }
 }
 
-class C extends B {
-    private double num2;
-
-    public C() {
-        super();
-    }
-
-    public C(String name, double num2, int num) {
-        super(name, num);
-        this.num2 = num2;
+class C extends B{
+    double number2;
+    C(String name, double number2, int number){
+        super(name,number);
+        this.number2=number2;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ", " + num2;
+        return super.toString() + ", " + number2;
     }
 }
 
 public class ex02 {
     public static void main(String[] args) {
-        A[] a = {
+        A[] a={
                 new A("Ala"),
                 new B("Ola", 5),
-                new C("Zosia", 3.5, 3)};
-        for (int i = 0; i < a.length; i++) {
-
+                new C("zosia", 3.5, 3)
+            };
+        for(int i=0;i<a.length;i++){
             System.out.println(a[i]);
-        }
+        };
     }
 }
