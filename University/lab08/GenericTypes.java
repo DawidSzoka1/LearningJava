@@ -9,7 +9,7 @@ public class GenericTypes {
     public static void main(String[] args) {
         KlasaA<Integer> a = new KlasaA<>(3);
         Integer[] ar = new Integer[3];
-        ar[0] = 5;
+        ar[0] = 3;
         KlasaA<Point> p = new KlasaA<>(new Point(3, 4));
         KlasaB<Integer> b = new KlasaB<>(ar);
         Point[] ar2 = new Point[3];
