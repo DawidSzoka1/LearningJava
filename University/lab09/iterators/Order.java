@@ -8,7 +8,7 @@ public class Order implements Iterable<Product> {
         this.products = products;
     }
     public Order(){
-        products = new Product[10];
+        products = new Product[11];
     }
 
     public Product[] getProducts() {
@@ -21,6 +21,6 @@ public class Order implements Iterable<Product> {
 
     @Override
     public Iterator<Product> iterator() {
-        return new CustomIterator(products);
+        return new ConditionIterator(products);
     }
 }
