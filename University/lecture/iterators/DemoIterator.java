@@ -11,5 +11,10 @@ public class DemoIterator {
         list.data.add(123);
         for(Integer i : list)
             System.out.println(i);
+
+        Iterator<Integer> iterator = list.iterator();
+        while(iterator.hasNext()){
+            System.out.print(iterator.next() + " ");
+        }
     }
 }
