@@ -1,4 +1,4 @@
-package University.lab09;
+package University.lab09.exceptions;
 
 public class ex03 {
     public static void main(String[] args) {

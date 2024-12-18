@@ -1,4 +1,4 @@
-package University.lab09;
+package University.lab09.exceptions;
 
 import java.util.Scanner;
 
