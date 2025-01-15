@@ -5,7 +5,10 @@ public class Papier  extends Rodzic{
     public Papier(String name) {
         this.name = name;
     }
-
+    @Override
+    public String odzysk() {
+        return "paoier";
+    }
 
     @Override
     public String toString() {
