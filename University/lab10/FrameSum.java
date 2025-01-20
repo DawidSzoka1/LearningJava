@@ -24,8 +24,8 @@ public class FrameSum extends JFrame {
             try {
                 number += Float.parseFloat(text.getText());
                 answer.setText("Suma = " + number);
-            } catch (NumberFormatException error) {
-                JOptionPane.showMessageDialog(fpanel, "To nie jest liczba");
+            } catch (Exception error) {
+                JOptionPane.showMessageDialog(null, "To nie jest liczba");
             }
         });
 

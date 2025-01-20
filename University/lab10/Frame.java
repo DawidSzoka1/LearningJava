@@ -32,32 +32,38 @@ public class Frame extends JFrame {
                 label.setText("Nic " + text.getText());
             }
         } );
-//        text.addMouseListener(new MouseListener() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                text.setText("");
-//            }
-//
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void mouseReleased(MouseEvent e) {
-//
-//            }
-//
-//            @Override
-//            public void mouseEntered(MouseEvent e) {
-//                text.setToolTipText("Tu daj imie cweluszku ");
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e) {
-//                label.setText("Wracaj do mnie");
-//            }
-//        });
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        text.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                text.setText("");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                text.setToolTipText("Tu daj imie cweluszku ");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                label.setText("Wracaj do mnie");
+            }
+        });
         add(button);
         add(label);
 
