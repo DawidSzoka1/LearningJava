@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class Okienko extends JFrame {
     JTextField imie = new JTextField(20);
@@ -33,6 +35,32 @@ public class Okienko extends JFrame {
         add(new JLabel("Wiek: "));
         add(wiek);
         add(wyslij);
+        imie.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                imie.setToolTipText("Wprowadz tu imie");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
         wyslij.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
